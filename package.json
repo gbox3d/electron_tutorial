@@ -2,7 +2,7 @@
   "name": "tutorial",
   "version": "1.0.0",
   "description": "electron tutorial by topdown lee",
-  "main": "basic/hello/main.js",
+  "main": "basic/canvas/main.js",
   "scripts": {
     "start": "node_modules/electron/dist/Electron.app/Contents/MacOS/Electron .",
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -2,14 +2,18 @@
   "name": "tutorial",
   "version": "1.0.0",
   "description": "electron tutorial by topdown lee",
-  "main": "basic/canvas/main.js",
+  "main": "basic/import/main.js",
   "scripts": {
-    "start": "node_modules/electron/dist/Electron.app/Contents/MacOS/Electron .",
+    "start": "node_modules/.bin/electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "topdown lee",
   "license": "ISC",
   "devDependencies": {
     "electron": "^2.0.2"
+  },
+  "dependencies": {
+    "async": "^2.6.1",
+    "moment": "^2.22.1"
   }
 }

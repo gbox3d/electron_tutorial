@@ -2,10 +2,10 @@
   "name": "tutorial",
   "version": "1.0.0",
   "description": "electron tutorial by topdown lee",
-
   "main": "test_prj/fcuMaster/main.js",
   "scripts": {
     "mac": "node_modules/.bin/electron .",
+    "win": "node_modules/.bin/electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "topdown lee",

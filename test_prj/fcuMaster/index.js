@@ -24,7 +24,7 @@ serialport.list(function (err, ports) {
     //console.log(port);
 
     let _li = document.createElement('li');
-    _li.innerText = port.comName;
+    _li.innerText = port.comName + "(" + port.manufacturer + ")";
     _li.comName = port.comName;
 
     document.querySelector('#portList').appendChild(_li);
@@ -56,7 +56,7 @@ function _dumpConfigAll()
     theApp.resCallback = function (_objres) {
       let _fpw = _objres.m_nPwmFirePowerControl / 255
 
-      document.querySelector("#fire-pwm input").value =  (_fpw.toFixed(4)) * 100;
+      document.querySelector("#fire-pwm input").value = ((_fpw.toFixed(4)) * 100).toFixed(2);
 
       document.querySelector("#cutoff-time input").value =  _objres.m_nCutOffThresHold;
       document.querySelector("#downpluse-term input").value =  _objres.m_pulseDown;

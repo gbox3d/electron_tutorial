@@ -50,15 +50,11 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
 ### VisualStudioCode template
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
 
-
+.vscode
 .idea
-node_modules
 
+node_modules
 package-lock.json

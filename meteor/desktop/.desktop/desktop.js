@@ -48,6 +48,11 @@ export default class Desktop {
             window.on('unresponsive', Desktop.windowUnresponsiveHandler);
         });
 
+        //console.log(desktop)
+
+        //window.bar = "hello"
+
+
         // Consider setting a crash reporter ->
         // https://github.com/electron/electron/blob/master/docs/api/crash-reporter.md
     }

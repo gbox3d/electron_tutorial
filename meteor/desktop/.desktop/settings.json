@@ -14,9 +14,15 @@
     "webAppStartupTimeout": 60000,
     "exposeLocalFilesystem": false,
     "window": {
+        "width" : 1024,
+        "height" : 768,
         "icon": "@assets/meteor.png",
         "_windows": {
             "icon": "@assets/meteor.ico"
+        },
+        "webPreferences" : {
+            "nodeIntegration" : true,
+            "webSecurity" : false
         }
     },
     "windowDev": {

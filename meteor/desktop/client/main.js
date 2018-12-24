@@ -3,15 +3,18 @@ import { ReactiveVar } from 'meteor/reactive-var';
 
 import './main.html';
 
-
+//const fs = require("fs");
+import fs from 'fs';
 
 Meteor.startup(() => {
   // code to run on server at startup
   console.log('start up')
+  
+  console.log(fs)
 });
 
 
-// const {fs} = require('fs');
+// const {fs} = Npm.require('fs');
 // const { readFileSync } = require('fs')
 
 window.readConfig = function () {

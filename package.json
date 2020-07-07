@@ -11,7 +11,7 @@
   "author": "topdown lee",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^3.0.8",
+    "electron": "^9.1.0",
     "electron-rebuild": "^1.7.3"
   },
   "dependencies": {

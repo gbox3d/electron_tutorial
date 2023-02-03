@@ -17,3 +17,22 @@ npm install
 node_modules/.bin/electron-rebuild 
 
 ```
+
+## packaging
+
+hello 예제앱 배포판만들기 예제
+
+```bash
+cd basic/hello
+npm install --save-dev @electron-forge/cli
+npx electron-forge import
+npm run make
+```
+
+/out 폴더로 결과물이 출력된다.
+
+
+참고 : https://www.electronjs.org/docs/latest/tutorial/tutorial-packaging
+
+
+

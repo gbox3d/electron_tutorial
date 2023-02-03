@@ -20,24 +20,56 @@ ipcRenderer.on('message-reply', (event, arg) => {
 ipcRenderer.send('message', 'ping')
 
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+
+    const portListElement = document.querySelector('#portList')
+    const selectPortElement = document.querySelector('#selectPort')
 
     ipcRenderer.on('get-serialport-list-reply', (event, arg) => {
-        console.log(arg) 
+        console.log(arg)
 
-        const _ul = document.querySelector('#portList')
+        const _ul = portListElement
 
         arg.forEach((port) => {
             const _li = document.createElement('li')
             _li.innerHTML = port.path
+            _li.setAttribute('data-path', port.path)
             _ul.appendChild(_li)
         });
     });
     ipcRenderer.send('get-serialport-list')
 
 
+    ipcRenderer.on('serialport-data', (event, arg) => {
+        // let _data = new TextDecoder().decode(arg);
+        let _data = arg;
+        console.log(_data)
+    });
+
+    document.querySelector('#connect').addEventListener('click', () => {
+
+        console.log('connect')
+        ipcRenderer.send('connect_sp', { path: '/dev/tty.usbserial-1130', baudRate: 115200 })
+    });
+
+    document.querySelector('#disconnect').addEventListener('click', () => {
+
+        console.log('disconnect')
+        ipcRenderer.send('disconnect_sp')
+    });
+
+    portListElement.addEventListener('click', (evt) => {
+        console.log(evt.target.dataset.path)
+        selectPortElement.innerHTML = evt.target.dataset.path
+    });
 
 });
+
+
+
+
+// /dev/tty.usbserial-1130
+//ipcRenderer.send('connect_sp', {path : '/dev/tty.usbserial-1130', baudRate : 115200})
 
 
 console.log('preload.js');

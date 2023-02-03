@@ -6,10 +6,7 @@
     "hello": "npx electron ./basic/hello",
     "serial": "npx electron ./adv/serialport",
     "bootstrap": "npx electron ./basic/bootstrap",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "topdown lee",
   "license": "ISC",
@@ -24,11 +21,6 @@
     "serialport": "^10.4.0"
   },
   "devDependencies": {
-    "@electron-forge/cli": "^6.0.4",
-    "@electron-forge/maker-deb": "^6.0.4",
-    "@electron-forge/maker-rpm": "^6.0.4",
-    "@electron-forge/maker-squirrel": "^6.0.4",
-    "@electron-forge/maker-zip": "^6.0.4",
     "electron": "^22.2.0",
     "electron-rebuild": "^3.2.9"
   }

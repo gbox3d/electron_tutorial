@@ -3,9 +3,8 @@ const {app, BrowserWindow , ipcMain} = require('electron')
 const path = require('path')
 const fs = require('fs')
 
-const {SerialPort,ReadlineParser} = require('serialport');
+// const {SerialPort,ReadlineParser} = require('serialport');
 // const Readline = require('@serialport/parser-readline')
-
 
 
 // const { contextBridge, ipcRenderer } = require('electron')
@@ -32,40 +31,8 @@ function createWindow () {
     event.reply('message-reply', `u say ${arg}`)
   });
 
-  ipcMain.on('get-serialport-list', async (event, arg) => {
-    const list = await SerialPort.list()
-    console.log(list)
-    event.reply('get-serialport-list-reply', list)
-  });
-
-  let port = null;
-  ipcMain.on('connect_sp', async (event, arg) => {
-    port = new SerialPort( { path : arg.path, baudRate: arg.baudRate })
-    const parser = new ReadlineParser({ delimiter: '\r\n'})
-    port.pipe(parser)
-    port.on('open', () => {
-      console.log('serial port open')
-    });
-
-    port.on('close', () => {
-      console.log('serial port close')
-    });
-    
-    parser.on('data', (data) => {
-      console.log(data)
-      event.reply('serialport-data', data)
-    });
-    
-  });
-
-  ipcMain.on('disconnect_sp', async (event, arg) => {
-    console.log('disconnect_sp')
-
-    if(port) {
-      port.close();
-    }
-
-  });
+  //serialport for electron framework
+  require('./serial_electron.js')();
 
   // and load the index.html of the app.
   mainWindow.loadFile('index.html')
